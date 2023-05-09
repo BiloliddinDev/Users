@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@tanstack/react-query": "^4.29.5",
     "antd": "^5.4.7",
     "axios": "^1.4.0",
@@ -16,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.11.1",
+    "react-toastify": "^9.1.2",
     "sass": "^1.62.1"
   },
   "devDependencies": {
