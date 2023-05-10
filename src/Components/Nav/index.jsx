@@ -5,9 +5,9 @@ const Nav = () => {
   return (
     <div className="text-center bg-slate-800 text-white">
       <h1>LOGO</h1>
-      {/* <div>
-        <NavLink to="/">Home</NavLink>
-      </div> */}
+      <div>
+        <NavLink to="/register">Sign Up</NavLink>
+      </div>
     </div>
   );
 };

@@ -10,9 +10,10 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="register" element={<Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/edit/:id" element={<EditPage />} />
         <Route path="/add" element={<Create />} />
+        {/* <Route /> */}
       </Routes>
     </Layout>
   );
