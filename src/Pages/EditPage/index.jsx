@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { Button, Input } from "antd";
 import { toast } from "react-toastify";
+import { instance } from "../../Utils";
 
 const EditPage = () => {
   const {
@@ -16,9 +17,11 @@ const EditPage = () => {
   const { id } = useParams();
 
   const editData = useUpdate(`api/users/${id}`);
-  const GetSingle = useGetData(["posts", "id"], `/api/users/${id}`);
+  const GetSingle = useGetData(`api/users/${id}`);
 
   console.log(GetSingle);
+
+  useEffect(() => {}, []);
 
   const Update = (e) => {
     editData.mutate(

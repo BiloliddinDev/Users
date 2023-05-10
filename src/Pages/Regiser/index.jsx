@@ -15,25 +15,22 @@ export const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const post = usePostData("api/register");
+  const post = usePostData("/api/register");
 
   const Postdata = (data) => {
-    console.log(data);
-    post.mutate(
-      { data },
-      {
-        onSuccess: () => {
-          toast.success("Register User"), nav("/");
-        },
-        onError: () => toast.error("Siz Hali Royhatdan otmadingiz "),
-      }
-    );
+    post.mutate(data, {
+      onSuccess: () => {
+        toast.success("Register User"), nav("/");
+      },
+      onError: () => toast.error("Siz Hali Royhatdan otmadingiz "),
+    });
     reset();
   };
 
   return (
     <div className="flex flex-col items-center">
       <h1>Register</h1>
+      <br />
       <p>eve.holt@reqres.in</p>
       <p>pistol</p>
       <form
@@ -86,6 +83,13 @@ export const Register = () => {
           Sentd
         </Button>
       </form>
+      <Button
+        onClick={() => nav(-1)}
+        style={{ backgroundColor: "black", marginTop: "10px" }}
+        type="primary"
+      >
+        Back
+      </Button>
     </div>
   );
 };
