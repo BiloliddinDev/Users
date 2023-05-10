@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Catrs from "../../Components/Cart";
-import { useGetData } from "../../Hooks";
+import { useDelete, useGetData } from "../../Hooks";
 import { Button, Pagination } from "antd";
 import { useNavigate } from "react-router-dom";
+import { instance } from "../../Utils";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-toastify";
 
 export const Home = () => {
   const nav = useNavigate();
@@ -10,7 +13,9 @@ export const Home = () => {
   const Getdat1 = useGetData(["posts2"], `api/users?page=2`);
 
   const DeletedData = (e) => {
-    console.log(e.id);
+    instance.delete(`api/users/${e.id}`).then((res) => {
+      toast.error(`This Data Deleted ${e.id}`);
+    });
   };
 
   return (

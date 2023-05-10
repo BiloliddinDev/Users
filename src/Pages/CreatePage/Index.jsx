@@ -11,6 +11,7 @@ const Create = () => {
   const {
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -23,6 +24,7 @@ const Create = () => {
         onError: () => toast.error("Malumot negadur qoshlmadi"),
       }
     );
+    reset();
   };
 
   return (

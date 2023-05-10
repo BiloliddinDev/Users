@@ -10,3 +10,11 @@ export const useGetData = (keys, url, options) => {
 export const usePostData = (url) => {
   return useMutation((data) => instance.post(url, data));
 };
+
+export const useUpdate = (url) => {
+  return useMutation((data) => instance.patch(url, data));
+};
+
+export const useDelete = (url) => {
+  return useMutation(() => instance.delete(url));
+};
